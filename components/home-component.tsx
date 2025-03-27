@@ -1,3 +1,5 @@
+"use client";
+
 import BackgroundGrid from "@/components/background-grid";
 import { CodePreview } from "@/components/code-preview";
 import DarkModeToggle from "@/components/darkmode-toggle";
@@ -11,8 +13,6 @@ interface HomeComponentProps {
 }
 
 const HomeComponent = ({ backgrounds }: HomeComponentProps) => {
-  console.log("Backgrounds:", backgrounds[0].component);
-
   const [selectedBackground, setSelectedBackground] = useState(backgrounds[0]);
   const [codePreviewOpen, setCodePreviewOpen] = useState(false);
   const [previewCode, setPreviewCode] = useState("");
