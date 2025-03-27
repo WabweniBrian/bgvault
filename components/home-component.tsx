@@ -3,10 +3,10 @@
 import BackgroundGrid from "@/components/background-grid";
 import { CodePreview } from "@/components/code-preview";
 import DarkModeToggle from "@/components/darkmode-toggle";
-import { BackgroundType } from "@/lib/backgrounds";
 import { Github, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { BackgroundType } from "@/app/backgrounds/backgrounds";
 
 interface HomeComponentProps {
   backgrounds: BackgroundType[];
