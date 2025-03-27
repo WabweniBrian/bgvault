@@ -1660,31 +1660,44 @@ export const backgrounds = [
     id: "saas-analytics-pattern",
     name: "SaaS Analytics Pattern",
     component: <SaasAnalyticsPatternBackground />,
-    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
-  <div class="absolute inset-0 opacity-20 dark:opacity-10">
-    <svg width="100%" height="100%">
-      <pattern id="analytics-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-        <path
-          d="M0 70L20 70L20 30L40 30L40 50L60 50L60 20L80 20L80 60L100 60"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          class="text-blue-500 dark:text-blue-400"
-        />
-        <path
-          d="M0 80L20 80L20 60L40 60L40 90L60 90L60 70L80 70L80 40L100 40"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          class="text-emerald-500 dark:text-emerald-400"
-          strokeDasharray="2,2"
-        />
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#analytics-pattern)" />
-    </svg>
-  </div>
-</div>`,
+    code: `<>
+      <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
+        <div className="absolute inset-0 opacity-20 dark:opacity-10">
+          <svg width="100%" height="100%">
+            <pattern
+              id="analytics-pattern"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 70L20 70L20 30L40 30L40 50L60 50L60 20L80 20L80 60L100 60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-blue-500 dark:text-blue-400"
+              />
+              <path
+                d="M0 80L20 80L20 60L40 60L40 90L60 90L60 70L80 70L80 40L100 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-emerald-500 dark:text-emerald-400"
+                strokeDasharray="2,2"
+              />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#analytics-pattern)" />
+          </svg>
+        </div>
+      </div>
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
+      </div>
+    </>`,
   },
   {
     id: "saas-branded-gradient",
