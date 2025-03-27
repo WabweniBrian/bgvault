@@ -1660,10 +1660,10 @@ export const backgrounds = [
     id: "saas-analytics-pattern",
     name: "SaaS Analytics Pattern",
     component: <SaasAnalyticsPatternBackground />,
-    code: `<>
-      <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
-        <div className="absolute inset-0 opacity-20 dark:opacity-10">
+    code: `<div>
+      <div class="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
+        <div class="absolute inset-0 opacity-20 dark:opacity-10">
           <svg width="100%" height="100%">
             <pattern
               id="analytics-pattern"
@@ -1678,14 +1678,14 @@ export const backgrounds = [
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-blue-500 dark:text-blue-400"
+                class="text-blue-500 dark:text-blue-400"
               />
               <path
                 d="M0 80L20 80L20 60L40 60L40 90L60 90L60 70L80 70L80 40L100 40"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-emerald-500 dark:text-emerald-400"
+                class="text-emerald-500 dark:text-emerald-400"
                 strokeDasharray="2,2"
               />
             </pattern>
@@ -1693,11 +1693,11 @@ export const backgrounds = [
           </svg>
         </div>
       </div>
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
       </div>
-    </>`,
+    </div>`,
   },
   {
     id: "saas-branded-gradient",
