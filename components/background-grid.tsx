@@ -3,11 +3,11 @@
 import type React from "react";
 
 import { Button } from "@/components/ui/button";
-import { BackgroundType } from "@/lib/backgrounds";
 import { cn } from "@/lib/utils";
 import { CheckCheck, Code, Copy } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { BackgroundType } from "@/app/backgrounds/backgrounds";
 
 interface BackgroundGridProps {
   backgrounds: BackgroundType[];
