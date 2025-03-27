@@ -1,4 +1,4 @@
-# BgVault
+# BgVault - Modern Background Code Snippets
 
 ## Description
 

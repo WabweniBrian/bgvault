@@ -4,7 +4,7 @@ import BackgroundGrid from "@/components/background-grid";
 import { CodePreview } from "@/components/code-preview";
 import DarkModeToggle from "@/components/darkmode-toggle";
 import { BackgroundType } from "@/lib/backgrounds";
-import { Github, Search, Twitter } from "lucide-react";
+import { Github, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -58,7 +58,7 @@ const HomeComponent = ({ backgrounds }: HomeComponentProps) => {
               <Github className="h-5 w-5" />
               <span className="hidden sm:inline">GitHub</span>
             </a>
-            <a
+            {/* <a
               href="https://twitter.com/wabdev"
               target="_blank"
               rel="noopener noreferrer"
@@ -66,7 +66,7 @@ const HomeComponent = ({ backgrounds }: HomeComponentProps) => {
             >
               <Twitter className="h-5 w-5" />
               <span className="hidden sm:inline">Twitter</span>
-            </a>
+            </a> */}
           </div>
         </header>
 
