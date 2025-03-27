@@ -55,8 +55,6 @@ const BackgroundGrid = ({
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {backgrounds.map((background) => {
-            const BackgroundComponent = background.component;
-
             return (
               <div
                 key={background.id}
@@ -68,9 +66,7 @@ const BackgroundGrid = ({
                 )}
                 onClick={() => onSelect(background)}
               >
-                <div className="absolute inset-0">
-                  <BackgroundComponent />
-                </div>
+                <div className="absolute inset-0">{background.component}</div>
 
                 {/* Action buttons - only visible on hover */}
                 <div className="absolute right-2 top-2 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">

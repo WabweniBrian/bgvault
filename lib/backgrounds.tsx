@@ -2,7 +2,7 @@ import type React from "react";
 export type BackgroundType = {
   id: string;
   name: string;
-  component: React.ComponentType;
+  component: React.JSX.Element;
   code: string;
 };
 
@@ -41,38 +41,44 @@ function SaasDashboardGridBackground() {
 // SaaS Analytics Pattern
 function SaasAnalyticsPatternBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
-      <div className="absolute inset-0 opacity-20 dark:opacity-10">
-        <svg width="100%" height="100%">
-          <pattern
-            id="analytics-pattern"
-            x="0"
-            y="0"
-            width="100"
-            height="100"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M0 70L20 70L20 30L40 30L40 50L60 50L60 20L80 20L80 60L100 60"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="text-blue-500 dark:text-blue-400"
-            />
-            <path
-              d="M0 80L20 80L20 60L40 60L40 90L60 90L60 70L80 70L80 40L100 40"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="text-emerald-500 dark:text-emerald-400"
-              strokeDasharray="2,2"
-            />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#analytics-pattern)" />
-        </svg>
+    <>
+      <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
+        <div className="absolute inset-0 opacity-20 dark:opacity-10">
+          <svg width="100%" height="100%">
+            <pattern
+              id="analytics-pattern"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 70L20 70L20 30L40 30L40 50L60 50L60 20L80 20L80 60L100 60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-blue-500 dark:text-blue-400"
+              />
+              <path
+                d="M0 80L20 80L20 60L40 60L40 90L60 90L60 70L80 70L80 40L100 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-emerald-500 dark:text-emerald-400"
+                strokeDasharray="2,2"
+              />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#analytics-pattern)" />
+          </svg>
+        </div>
       </div>
-    </div>
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
+      </div>
+    </>
   );
 }
 
@@ -990,50 +996,6 @@ function GradientGridBackground() {
   );
 }
 
-// Floating Shapes Background
-function FloatingShapesBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative mx-auto h-full w-full max-w-7xl">
-          {/* Shapes */}
-          <div
-            className="absolute left-1/4 top-1/4 h-16 w-16 rotate-12 animate-[float_8s_ease-in-out_infinite] rounded-lg bg-blue-500/20 dark:bg-blue-500/30"
-            style={{ animationDelay: "0s" }}
-          />
-          <div
-            className="absolute right-1/4 top-1/3 h-24 w-24 animate-[float_10s_ease-in-out_infinite] rounded-full bg-purple-500/20 dark:bg-purple-500/30"
-            style={{ animationDelay: "-1s" }}
-          />
-          <div
-            className="absolute bottom-1/4 left-1/3 h-20 w-20 rotate-45 animate-[float_9s_ease-in-out_infinite] rounded-lg bg-pink-500/20 dark:bg-pink-500/30"
-            style={{ animationDelay: "-2s" }}
-          />
-          <div
-            className="absolute right-1/3 top-2/3 h-12 w-12 animate-[float_7s_ease-in-out_infinite] rounded-full bg-teal-500/20 dark:bg-teal-500/30"
-            style={{ animationDelay: "-3s" }}
-          />
-          <div
-            className="right-1/5 absolute bottom-1/3 h-16 w-16 -rotate-12 animate-[float_11s_ease-in-out_infinite] rounded-lg bg-amber-500/20 dark:bg-amber-500/30"
-            style={{ animationDelay: "-4s" }}
-          />
-        </div>
-      </div>
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) rotate(0);
-          }
-          50% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-        }
-      `}</style>
-    </div>
-  );
-}
-
 // Tech Circuit Background
 function TechCircuitBackground() {
   return (
@@ -1666,7 +1628,7 @@ export const backgrounds = [
   {
     id: "saas-dashboard-grid",
     name: "SaaS Dashboard Grid",
-    component: SaasDashboardGridBackground,
+    component: <SaasDashboardGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0">
@@ -1697,7 +1659,7 @@ export const backgrounds = [
   {
     id: "saas-analytics-pattern",
     name: "SaaS Analytics Pattern",
-    component: SaasAnalyticsPatternBackground,
+    component: <SaasAnalyticsPatternBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-20 dark:opacity-10">
@@ -1727,7 +1689,7 @@ export const backgrounds = [
   {
     id: "saas-branded-gradient",
     name: "SaaS Branded Gradient",
-    component: SaasBrandedGradientBackground,
+    component: <SaasBrandedGradientBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-white dark:from-blue-950 dark:via-indigo-950 dark:to-gray-950" />
   <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-100/30 to-transparent dark:from-blue-900/10 dark:to-transparent" />
@@ -1745,7 +1707,7 @@ export const backgrounds = [
   {
     id: "saas-enterprise-pattern",
     name: "SaaS Enterprise Pattern",
-    component: SaasEnterprisePatternBackground,
+    component: <SaasEnterprisePatternBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-10 dark:opacity-5">
@@ -1782,7 +1744,7 @@ export const backgrounds = [
   {
     id: "saas-data-flow",
     name: "SaaS Data Flow",
-    component: SaasDataFlowBackground,
+    component: <SaasDataFlowBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-20 dark:opacity-10">
@@ -1832,7 +1794,7 @@ export const backgrounds = [
   {
     id: "saas-subtle-tech",
     name: "SaaS Subtle Tech",
-    component: SaasSubtleTechBackground,
+    component: <SaasSubtleTechBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-10 dark:opacity-5">
@@ -1857,7 +1819,7 @@ export const backgrounds = [
   {
     id: "saas-minimal-corners",
     name: "SaaS Minimal Corners",
-    component: SaasMinimalCornersBackground,
+    component: <SaasMinimalCornersBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-20 dark:opacity-10">
@@ -1900,7 +1862,7 @@ export const backgrounds = [
   {
     id: "saas-gradient-accent",
     name: "SaaS Gradient Accent",
-    component: SaasGradientAccentBackground,
+    component: <SaasGradientAccentBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 dark:from-blue-500 dark:via-indigo-600 dark:to-purple-700" />
@@ -1924,7 +1886,7 @@ export const backgrounds = [
   {
     id: "saas-blueprint-grid",
     name: "SaaS Blueprint Grid",
-    component: SaasBlueprintGridBackground,
+    component: <SaasBlueprintGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950" />
   <div class="absolute inset-0">
@@ -1963,7 +1925,7 @@ export const backgrounds = [
   {
     id: "saas-topography",
     name: "SaaS Topography",
-    component: SaasTopographyBackground,
+    component: <SaasTopographyBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 opacity-20 dark:opacity-10">
@@ -2035,7 +1997,7 @@ export const backgrounds = [
   {
     id: "vibrant-gradient-mesh",
     name: "Vibrant Gradient Mesh",
-    component: VibrantGradientMeshBackground,
+    component: <VibrantGradientMeshBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute -inset-[50%] opacity-70 dark:opacity-50 blur-3xl">
     <div class="absolute top-1/4 left-1/4 w-[60%] aspect-square rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-500" />
@@ -2047,7 +2009,7 @@ export const backgrounds = [
   {
     id: "neon-glow-gradient",
     name: "Neon Glow Gradient",
-    component: NeonGlowGradientBackground,
+    component: <NeonGlowGradientBackground />,
     code: `<div class="absolute inset-0 bg-gray-900 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
   <div class="absolute -inset-[10%] opacity-50">
@@ -2063,7 +2025,7 @@ export const backgrounds = [
   {
     id: "pastel-gradient-waves",
     name: "Pastel Gradient Waves",
-    component: PastelGradientWavesBackground,
+    component: <PastelGradientWavesBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-rose-100 via-violet-100 to-teal-100 dark:from-rose-950/40 dark:via-violet-950/40 dark:to-teal-950/40" />
   <div class="absolute inset-0 opacity-30 dark:opacity-20">
@@ -2104,7 +2066,7 @@ export const backgrounds = [
   {
     id: "multi-spotlight",
     name: "Multi Spotlight",
-    component: MultiSpotlightBackground,
+    component: <MultiSpotlightBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute -inset-[10%]">
@@ -2118,7 +2080,7 @@ export const backgrounds = [
   {
     id: "radial-spotlight",
     name: "Radial Spotlight",
-    component: RadialSpotlightBackground,
+    component: <RadialSpotlightBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(148,163,184,0.15)_0%,rgba(148,163,184,0)_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(148,163,184,0.15)_0%,rgba(15,23,42,0)_70%)]" />
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.15)_0%,rgba(139,92,246,0)_60%)] dark:bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.15)_0%,rgba(139,92,246,0)_60%)]" />
@@ -2128,7 +2090,7 @@ export const backgrounds = [
   {
     id: "glassmorphic-spotlight",
     name: "Glassmorphic Spotlight",
-    component: GlassmorphicSpotlightBackground,
+    component: <GlassmorphicSpotlightBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0">
@@ -2141,7 +2103,7 @@ export const backgrounds = [
   {
     id: "gradient-spotlight-blend",
     name: "Gradient Spotlight Blend",
-    component: GradientSpotlightBlendBackground,
+    component: <GradientSpotlightBlendBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute -inset-[10%]">
@@ -2163,7 +2125,7 @@ export const backgrounds = [
   {
     id: "duotone-gradient",
     name: "Duotone Gradient",
-    component: DuotoneGradientBackground,
+    component: <DuotoneGradientBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-rose-50 dark:from-indigo-950 dark:to-rose-950" />
   <div class="absolute inset-0 mix-blend-multiply dark:mix-blend-screen">
@@ -2177,7 +2139,7 @@ export const backgrounds = [
   {
     id: "gradient-noise-blend",
     name: "Gradient Noise Blend",
-    component: GradientNoiseBlendBackground,
+    component: <GradientNoiseBlendBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-sky-50 to-indigo-100 dark:from-sky-950 dark:to-indigo-900" />
   <div class="absolute inset-0 opacity-40 dark:opacity-30 mix-blend-soft-light">
@@ -2194,7 +2156,7 @@ export const backgrounds = [
   {
     id: "gradient-orbs",
     name: "Gradient Orbs",
-    component: GradientOrbsBackground,
+    component: <GradientOrbsBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute -inset-[10%]">
@@ -2207,7 +2169,7 @@ export const backgrounds = [
   {
     id: "gradient-rays",
     name: "Gradient Rays",
-    component: GradientRaysBackground,
+    component: <GradientRaysBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950" />
   <div class="absolute inset-0 overflow-hidden">
@@ -2231,13 +2193,13 @@ export const backgrounds = [
   {
     id: "gradient",
     name: "Gradient",
-    component: GradientBackground,
+    component: <GradientBackground />,
     code: `<div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 dark:from-purple-900 dark:to-blue-900" />`,
   },
   {
     id: "dotted-grid",
     name: "Dotted Grid",
-    component: DottedGridBackground,
+    component: <DottedGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
   <div class="absolute inset-0" style={{ 
     backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
@@ -2248,7 +2210,7 @@ export const backgrounds = [
   {
     id: "spotlight",
     name: "Spotlight",
-    component: SpotlightBackground,
+    component: <SpotlightBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute -inset-[10%] opacity-50 dark:opacity-70">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] aspect-square rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-3xl" />
@@ -2259,7 +2221,7 @@ export const backgrounds = [
   {
     id: "waves",
     name: "Waves",
-    component: WavesBackground,
+    component: <WavesBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <svg
     class="absolute inset-0 h-full w-full"
@@ -2281,7 +2243,7 @@ export const backgrounds = [
   {
     id: "mesh-gradient",
     name: "Mesh Gradient",
-    component: MeshGradientBackground,
+    component: <MeshGradientBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute -inset-[100%] opacity-50">
     <div class="absolute top-1/3 left-1/4 w-[50%] aspect-square rounded-full bg-gradient-to-r from-pink-500 to-purple-500 blur-3xl" />
@@ -2290,38 +2252,11 @@ export const backgrounds = [
   </div>
 </div>`,
   },
-  {
-    id: "floating-shapes",
-    name: "Floating Shapes",
-    component: FloatingShapesBackground,
-    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="relative w-full h-full max-w-7xl mx-auto">
-      {/* Shapes */}
-      <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-500/20 dark:bg-blue-500/30 rounded-lg rotate-12 animate-[float_8s_ease-in-out_infinite]" 
-           style={{ animationDelay: '0s' }} />
-      <div class="absolute top-1/3 right-1/4 w-24 h-24 bg-purple-500/20 dark:bg-purple-500/30 rounded-full animate-[float_10s_ease-in-out_infinite]" 
-           style={{ animationDelay: '-1s' }} />
-      <div class="absolute bottom-1/4 left-1/3 w-20 h-20 bg-pink-500/20 dark:bg-pink-500/30 rounded-lg rotate-45 animate-[float_9s_ease-in-out_infinite]" 
-           style={{ animationDelay: '-2s' }} />
-      <div class="absolute top-2/3 right-1/3 w-12 h-12 bg-teal-500/20 dark:bg-teal-500/30 rounded-full animate-[float_7s_ease-in-out_infinite]" 
-           style={{ animationDelay: '-3s' }} />
-      <div class="absolute bottom-1/3 right-1/5 w-16 h-16 bg-amber-500/20 dark:bg-amber-500/30 rounded-lg -rotate-12 animate-[float_11s_ease-in-out_infinite]" 
-           style={{ animationDelay: '-4s' }} />
-    </div>
-  </div>
-  <style jsx>{\`
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-    }
-  \`}</style>
-</div>`,
-  },
+
   {
     id: "tech-circuit",
     name: "Tech Circuit",
-    component: TechCircuitBackground,
+    component: <TechCircuitBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <svg class="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
     <pattern id="circuit-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -2365,7 +2300,7 @@ export const backgrounds = [
   {
     id: "gradient-mesh-dots",
     name: "Gradient Mesh Dots",
-    component: GradientMeshWithDotsBackground,
+    component: <GradientMeshWithDotsBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   {/* Gradient background */}
   <div class="absolute inset-0 bg-gradient-to-br from-violet-50 to-indigo-100 dark:from-violet-950/30 dark:to-indigo-900/30" />
@@ -2387,7 +2322,7 @@ export const backgrounds = [
   {
     id: "topographic",
     name: "Topographic",
-    component: TopographicBackground,
+    component: <TopographicBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <svg class="absolute inset-0 h-full w-full opacity-20 dark:opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
     <path d="M0,20 Q25,40 50,20 Q75,0 100,20 V100 H0 Z" class="fill-blue-100 dark:fill-blue-900/30" />
@@ -2403,7 +2338,7 @@ export const backgrounds = [
   {
     id: "gradient-with-pattern",
     name: "Gradient Pattern",
-    component: GradientWithPatternBackground,
+    component: <GradientWithPatternBackground />,
     code: `<div class="absolute inset-0 bg-gradient-to-br from-rose-100 to-teal-100 dark:from-rose-950/40 dark:to-teal-950/40 overflow-hidden">
   <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
     <pattern id="subtle-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -2419,7 +2354,7 @@ export const backgrounds = [
   {
     id: "hexagon-grid",
     name: "Hexagon Grid",
-    component: HexagonGridBackground,
+    component: <HexagonGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <svg class="absolute inset-0 h-full w-full opacity-10 dark:opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
     <pattern id="hexagon-pattern" x="0" y="0" width="16" height="28" patternUnits="userSpaceOnUse">
@@ -2435,7 +2370,7 @@ export const backgrounds = [
   {
     id: "soft-gradient-waves",
     name: "Soft Waves",
-    component: SoftGradientWavesBackground,
+    component: <SoftGradientWavesBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-blue-950/20" />
   <svg class="absolute bottom-0 left-0 right-0 w-full opacity-30" viewBox="0 0 1200 200" preserveAspectRatio="none">
@@ -2451,7 +2386,7 @@ export const backgrounds = [
   {
     id: "gradient-grid",
     name: "Gradient Grid",
-    component: GradientGridBackground,
+    component: <GradientGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-indigo-950/30 dark:to-pink-950/30" />
   <div class="absolute inset-0" style={{ 
@@ -2465,7 +2400,7 @@ export const backgrounds = [
   {
     id: "minimal-dots",
     name: "Minimal Dots",
-    component: MinimalDotsGridBackground,
+    component: <MinimalDotsGridBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0" style={{ 
     backgroundImage: \`
@@ -2480,7 +2415,7 @@ export const backgrounds = [
   {
     id: "gradient-with-blob",
     name: "Gradient Blob",
-    component: GradientWithBlobBackground,
+    component: <GradientWithBlobBackground />,
     code: `<div class="absolute inset-0 bg-gradient-to-br from-white to-gray-100 dark:from-gray-950 dark:to-gray-900 overflow-hidden">
   <div class="absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-emerald-200/40 to-teal-300/40 dark:from-emerald-800/20 dark:to-teal-700/20 blur-3xl" />
   <div class="absolute -bottom-1/4 -left-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-blue-200/40 to-indigo-300/40 dark:from-blue-800/20 dark:to-indigo-700/20 blur-3xl" />
@@ -2489,7 +2424,7 @@ export const backgrounds = [
   {
     id: "diagonal-stripes",
     name: "Diagonal Stripes",
-    component: DiagonalStripesBackground,
+    component: <DiagonalStripesBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
   <div class="absolute inset-0" style={{ 
     backgroundImage: 'repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 10px, transparent 10px, transparent 20px)',
@@ -2501,7 +2436,7 @@ export const backgrounds = [
   {
     id: "noise",
     name: "Noise Texture",
-    component: NoiseBackground,
+    component: <NoiseBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
   <svg class="absolute inset-0 h-full w-full opacity-30 dark:opacity-20">
     <filter id="noiseFilter">
@@ -2519,7 +2454,7 @@ export const backgrounds = [
   {
     id: "geometric",
     name: "Geometric Pattern",
-    component: GeometricBackground,
+    component: <GeometricBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
   <svg class="absolute inset-0 h-full w-full opacity-10 dark:opacity-20" width="100%" height="100%">
     <pattern id="pattern-circles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
@@ -2532,7 +2467,7 @@ export const backgrounds = [
   {
     id: "binary-rain",
     name: "Binary Rain",
-    component: BinaryRainBackground,
+    component: <BinaryRainBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   {/* Tech-themed radial gradients */}
   <div class="absolute inset-0">
@@ -2573,7 +2508,7 @@ export const backgrounds = [
   {
     id: "field-pattern",
     name: "Field Pattern",
-    component: FieldPatternBackground,
+    component: <FieldPatternBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 opacity-5 dark:opacity-10">
     <svg width="100%" height="100%">
@@ -2593,7 +2528,7 @@ export const backgrounds = [
   {
     id: "product-dots",
     name: "Product Dots",
-    component: ProductDotsBackground,
+    component: <ProductDotsBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0">
     <div class="absolute left-[10%] top-[15%] h-2 w-2 rounded-full bg-yellow-400/30 dark:bg-yellow-400/40"></div>
@@ -2611,7 +2546,7 @@ export const backgrounds = [
   {
     id: "notebook-paper",
     name: "Notebook Paper",
-    component: NotebookPaperBackground,
+    component: <NotebookPaperBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 opacity-5 dark:opacity-10">
     <svg width="100%" height="100%">
@@ -2634,7 +2569,7 @@ export const backgrounds = [
   {
     id: "grid-finance",
     name: "Grid Finance",
-    component: GridFinanceBackground,
+    component: <GridFinanceBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 opacity-5 dark:opacity-10">
     <svg width="100%" height="100%">
@@ -2655,7 +2590,7 @@ export const backgrounds = [
   {
     id: "plate-pattern",
     name: "Plate Pattern",
-    component: PlatePatternBackground,
+    component: <PlatePatternBackground />,
     code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
   <div class="absolute inset-0 opacity-5 dark:opacity-10">
     <svg width="100%" height="100%">
