@@ -76,9 +76,9 @@ const HomeComponent = ({ backgrounds }: HomeComponentProps) => {
               Modern Backgrounds
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-              Free, beautiful backgrounds for your next project. Built with
-              Tailwind CSS. Click to preview, toggle light/dark mode, and copy
-              the code. Works with any project.
+              Free, beautiful backgrounds for your project. Built with Tailwind
+              CSS. Click to preview, toggle light/dark mode, and copy the code.
+              Works with any project with tailwind css.
             </p>
           </div>
 

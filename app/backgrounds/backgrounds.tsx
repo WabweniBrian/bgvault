@@ -3527,7 +3527,7 @@ export const backgrounds = [
     </svg>
   </div>
   
-  {/* Add some binary numbers with CSS */}
+  {/* Binary numbers */}
   <div class="absolute inset-0 opacity-5 dark:opacity-10">
     <div class="absolute left-[10%] top-[15%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
     <div class="absolute left-[20%] top-[25%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
