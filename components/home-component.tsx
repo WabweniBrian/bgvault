@@ -71,14 +71,16 @@ const HomeComponent = ({ backgrounds }: HomeComponentProps) => {
         </header>
 
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-4 text-lg text-muted-foreground">
-            Free, modern backgrounds for developers
-          </p>
-          <p className="mb-8 text-lg">
-            Build modern websites with these beautiful, customizable
-            backgrounds. Simply click on any background to preview it, and copy
-            the code to use in your projects.
-          </p>
+          <div className="mb-12 text-center">
+            <h1 className="mb-4 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-4xl font-bold text-transparent dark:from-blue-400 dark:to-violet-400 md:text-5xl">
+              Modern Backgrounds
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+              Free, beautiful backgrounds for your next project. Built with
+              Tailwind CSS. Click to preview, toggle light/dark mode, and copy
+              the code.
+            </p>
+          </div>
 
           {/* Custom Search input */}
           <div className="relative mx-auto mb-8 max-w-md">
