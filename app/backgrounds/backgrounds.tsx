@@ -1967,6 +1967,62 @@ const HexagonPatternBackground = () => {
   );
 };
 
+// Hexagonal Pattern Background
+export const HexagonalPatternBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="hexagons"
+              width="50"
+              height="43.4"
+              patternUnits="userSpaceOnUse"
+              patternTransform="scale(2)"
+            >
+              <path
+                d="M25 0 L50 14.4 L50 38.4 L25 51.8 L0 38.4 L0 14.4 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-blue-500/40 dark:text-blue-400/30"
+              />
+              <path
+                d="M25 0 L50 14.4 L50 38.4 L25 51.8 L0 38.4 L0 14.4 Z"
+                transform="translate(50, 25.9)"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-purple-500/40 dark:text-purple-400/30"
+              />
+            </pattern>
+
+            <linearGradient
+              id="hex-gradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+
+          <rect width="100%" height="100%" fill="url(#hexagons)" />
+          <rect width="100%" height="100%" fill="url(#hex-gradient)" />
+        </svg>
+      </div>
+
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.1),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.1),transparent_60%)]" />
+    </div>
+  );
+};
+
 // Circuit Board Background
 const CircuitBoardBackground = () => {
   return (
@@ -3444,6 +3500,90 @@ export const OceanWavesBackground = () => {
 };
 
 export const backgrounds = [
+  {
+    id: "binary-rain",
+    name: "Binary Rain",
+    component: <BinaryRainBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  {/* Tech-themed radial gradients */}
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
+  </div>
+  
+  {/* Circuit Lines */}
+  <div class="absolute inset-0 overflow-hidden opacity-10 dark:opacity-20">
+    <svg width="100%" height="100%" class="absolute">
+      <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <path
+          d="M0 50h40c5.5 0 10 4.5 10 10s4.5 10 10 10h40M50 0v40c0 5.5 4.5 10 10 10s10 4.5 10 10v40"
+          stroke="currentColor"
+          strokeWidth="1"
+          fill="none"
+          class="text-gray-400 dark:text-gray-600"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+    </svg>
+  </div>
+  
+  {/* Add some binary numbers with CSS */}
+  <div class="absolute inset-0 opacity-5 dark:opacity-10">
+    <div class="absolute left-[10%] top-[15%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
+    <div class="absolute left-[20%] top-[25%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
+    <div class="absolute left-[30%] top-[45%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
+    <div class="absolute left-[40%] top-[65%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
+    <div class="absolute left-[50%] top-[85%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
+    <div class="absolute left-[60%] top-[35%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
+    <div class="absolute left-[70%] top-[55%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
+    <div class="absolute left-[80%] top-[75%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
+    <div class="absolute left-[90%] top-[5%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
+  </div>
+</div>`,
+  },
+  {
+    id: "hexagonal-pattern",
+    name: "Hexagonal Pattern",
+    component: <HexagonalPatternBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
+          <path 
+            d="M25 0 L50 14.4 L50 38.4 L25 51.8 L0 38.4 L0 14.4 Z" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="1"
+            class="text-blue-500/40 dark:text-blue-400/30"
+          />
+          <path 
+            d="M25 0 L50 14.4 L50 38.4 L25 51.8 L0 38.4 L0 14.4 Z" 
+            transform="translate(50, 25.9)" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="1"
+            class="text-purple-500/40 dark:text-purple-400/30"
+          />
+        </pattern>
+        
+        <linearGradient id="hex-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
+          <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+        </linearGradient>
+      </defs>
+      
+      <rect width="100%" height="100%" fill="url(#hexagons)" />
+      <rect width="100%" height="100%" fill="url(#hex-gradient)" />
+    </svg>
+  </div>
+  
+  {/* Gradient overlays */}
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.1),transparent_60%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.1),transparent_60%)]" />
+</div>`,
+  },
   {
     id: "circuit-pattern",
     name: "Circuit Pattern",
@@ -5285,47 +5425,6 @@ export const backgrounds = [
     </pattern>
     <rect id="rect" x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
   </svg>
-</div>`,
-  },
-  {
-    id: "binary-rain",
-    name: "Binary Rain",
-    component: <BinaryRainBackground />,
-    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
-  {/* Tech-themed radial gradients */}
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_30%)]" />
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_30%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.15),transparent_30%)]" />
-  </div>
-  
-  {/* Circuit Lines */}
-  <div class="absolute inset-0 overflow-hidden opacity-10 dark:opacity-20">
-    <svg width="100%" height="100%" class="absolute">
-      <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-        <path
-          d="M0 50h40c5.5 0 10 4.5 10 10s4.5 10 10 10h40M50 0v40c0 5.5 4.5 10 10 10s10 4.5 10 10v40"
-          stroke="currentColor"
-          strokeWidth="1"
-          fill="none"
-          class="text-gray-400 dark:text-gray-600"
-        />
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
-    </svg>
-  </div>
-  
-  {/* Add some binary numbers with CSS */}
-  <div class="absolute inset-0 opacity-5 dark:opacity-10">
-    <div class="absolute left-[10%] top-[15%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
-    <div class="absolute left-[20%] top-[25%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
-    <div class="absolute left-[30%] top-[45%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
-    <div class="absolute left-[40%] top-[65%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
-    <div class="absolute left-[50%] top-[85%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
-    <div class="absolute left-[60%] top-[35%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
-    <div class="absolute left-[70%] top-[55%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
-    <div class="absolute left-[80%] top-[75%] text-xs font-mono text-gray-900 dark:text-gray-200">1</div>
-    <div class="absolute left-[90%] top-[5%] text-xs font-mono text-gray-900 dark:text-gray-200">0</div>
-  </div>
 </div>`,
   },
   {
