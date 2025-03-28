@@ -847,18 +847,6 @@ const DottedGridBackground = () => {
   );
 };
 
-// Spotlight Background
-const SpotlightBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
-      <div className="absolute -inset-[10%] opacity-50 dark:opacity-70">
-        <div className="absolute left-1/2 top-1/2 aspect-square w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-3xl" />
-        <div className="absolute right-1/4 top-1/4 aspect-square w-[30%] rounded-full bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
-      </div>
-    </div>
-  );
-};
-
 // Waves Background
 const WavesBackground = () => {
   return (
@@ -1624,7 +1612,2829 @@ const PlatePatternBackground = () => {
   );
 };
 
+// Subtle Dot Grid
+export const SubtleDotGridBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] opacity-40 [background-size:16px_16px] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] dark:opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Soft Noise Texture
+export const SoftNoiseTextureBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 [background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-indigo-50/30 dark:from-rose-950/20 dark:via-transparent dark:to-indigo-950/20" />
+    </div>
+  );
+};
+
+// Diagonal Lines
+export const DiagonalLinesBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, #6366f1 0, #6366f1 1px, transparent 0, transparent 50%)`,
+          backgroundSize: "10px 10px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Subtle Topography
+export const SubtleTopographyBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <svg
+        className="absolute inset-0 h-full w-full opacity-[0.15] dark:opacity-[0.07]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <filter id="noise">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.65"
+            numOctaves="3"
+            stitchTiles="stitch"
+          />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
+      </svg>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(153,246,228,0.15),transparent_40%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.12),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(253,224,71,0.08),transparent_40%)] dark:bg-[radial-gradient(circle_at_70%_60%,rgba(250,204,21,0.08),transparent_40%)]" />
+    </div>
+  );
+};
+
+// Wavy Lines
+export const WavyLinesBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <svg
+        className="absolute inset-0 h-full w-full opacity-[0.15] dark:opacity-[0.07]"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <pattern
+          id="wavy-pattern"
+          x="0"
+          y="0"
+          width="100"
+          height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-blue-500 dark:text-blue-400"
+          />
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#wavy-pattern)" />
+      </svg>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 dark:from-blue-950/30 dark:via-gray-950 dark:to-purple-950/30" />
+    </div>
+  );
+};
+
+// Crosshatch Pattern
+export const CrosshatchPatternBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+        style={{
+          backgroundImage: `
+            linear-gradient(135deg, #000 0px, transparent 1px),
+            linear-gradient(45deg, #000 0px, transparent 1px)
+          `,
+          backgroundSize: "16px 16px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900" />
+    </div>
+  );
+};
+
+// Subtle Confetti
+export const SubtleConfettiBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <svg
+        className="absolute inset-0 h-full w-full opacity-[0.15] dark:opacity-[0.07]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <pattern
+          id="confetti-pattern"
+          x="0"
+          y="0"
+          width="100"
+          height="100"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle
+            cx="10"
+            cy="10"
+            r="1"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="30"
+            cy="40"
+            r="1"
+            className="fill-green-500 dark:fill-green-400"
+          />
+          <circle
+            cx="70"
+            cy="20"
+            r="1"
+            className="fill-red-500 dark:fill-red-400"
+          />
+          <circle
+            cx="50"
+            cy="60"
+            r="1"
+            className="fill-yellow-500 dark:fill-yellow-400"
+          />
+          <circle
+            cx="90"
+            cy="80"
+            r="1"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+          <rect
+            x="20"
+            y="80"
+            width="2"
+            height="2"
+            className="fill-emerald-500 dark:fill-emerald-400"
+          />
+          <rect
+            x="60"
+            y="30"
+            width="2"
+            height="2"
+            className="fill-pink-500 dark:fill-pink-400"
+          />
+          <rect
+            x="80"
+            y="50"
+            width="2"
+            height="2"
+            className="fill-indigo-500 dark:fill-indigo-400"
+          />
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#confetti-pattern)" />
+      </svg>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Soft Mesh Gradient
+export const SoftMeshGradientBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(249,168,212,0.1),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(249,168,212,0.07),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(129,140,248,0.1),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(129,140,248,0.07),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,186,116,0.05),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(253,186,116,0.03),transparent_70%)]" />
+    </div>
+  );
+};
+
+// Subtle Graph Paper
+export const SubtleGraphPaperBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] [background-size:40px_40px] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_0.5px,transparent_0.5px),linear-gradient(to_bottom,#f0f0f0_0.5px,transparent_0.5px)] [background-size:8px_8px] dark:bg-[linear-gradient(to_right,#303030_0.5px,transparent_0.5px),linear-gradient(to_bottom,#303030_0.5px,transparent_0.5px)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+    </div>
+  );
+};
+
+// Subtle Isometric Grid
+export const SubtleIsometricGridBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+        style={{
+          backgroundImage: `
+            linear-gradient(30deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+            linear-gradient(150deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+            linear-gradient(30deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+            linear-gradient(150deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+            linear-gradient(60deg, #80808077 25%, transparent 25.5%, transparent 75%, #80808077 75%, #80808077),
+            linear-gradient(60deg, #80808077 25%, transparent 25.5%, transparent 75%, #80808077 75%, #80808077)
+          `,
+          backgroundSize: "40px 70px",
+          backgroundPosition: "0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Gradient Mesh Background
+const GradientMeshBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,224,71,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(253,224,71,0.05),transparent_70%)]" />
+    </div>
+  );
+};
+
+// Spotlight Background
+const SpotlightBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.5),transparent_40%)] opacity-30 dark:bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.3),transparent_40%)] dark:opacity-50" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(236,72,153,0.5),transparent_40%)] opacity-30 dark:bg-[radial-gradient(circle_at_70%_70%,rgba(236,72,153,0.3),transparent_40%)] dark:opacity-50" />
+      <div className="absolute inset-0 backdrop-blur-[100px]" />
+    </div>
+  );
+};
+
+// Dotted Pattern Background
+const DottedPatternBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-100/20 to-transparent dark:from-transparent dark:via-blue-900/10 dark:to-transparent" />
+    </div>
+  );
+};
+
+// Morphing Waves Background
+const MorphingWavesBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <svg
+        className="absolute inset-0 h-full w-full opacity-30 dark:opacity-20"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="none"
+          stroke="url(#gradient1)"
+          strokeWidth="0.5"
+          d="M0,50 C20,60 40,40 60,50 C80,60 100,40 100,50 L100,100 L0,100 Z"
+        />
+        <path
+          fill="none"
+          stroke="url(#gradient2)"
+          strokeWidth="0.5"
+          d="M0,60 C30,70 70,30 100,60 L100,100 L0,100 Z"
+        />
+        <path
+          fill="none"
+          stroke="url(#gradient3)"
+          strokeWidth="0.5"
+          d="M0,70 C20,80 80,20 100,70 L100,100 L0,100 Z"
+        />
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#8b5cf6" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#ec4899" />
+            <stop offset="100%" stopColor="#8b5cf6" />
+          </linearGradient>
+          <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#ec4899" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Hexagon Pattern Background
+const HexagonPatternBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <svg
+        className="absolute inset-0 h-full w-full opacity-20 dark:opacity-10"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+      >
+        <defs>
+          <pattern
+            id="hexagons"
+            width="50"
+            height="43.4"
+            patternUnits="userSpaceOnUse"
+            patternTransform="scale(0.5) rotate(0)"
+          >
+            <path
+              d="M25 0 L50 0 L62.5 21.7 L50 43.4 L25 43.4 L12.5 21.7 Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-blue-500 dark:text-blue-400"
+            />
+            <path
+              d="M0 21.7 L12.5 0 L37.5 0 L50 21.7 L37.5 43.4 L12.5 43.4 Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-blue-500 dark:text-blue-400"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hexagons)" />
+      </svg>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20 dark:from-blue-900/10 dark:via-transparent dark:to-purple-900/10" />
+    </div>
+  );
+};
+
+// Circuit Board Background
+const CircuitBoardBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] [background-size:20px_20px] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)]" />
+      <div className="absolute inset-0">
+        <svg
+          className="absolute inset-0 h-full w-full opacity-30 dark:opacity-20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <pattern
+            id="circuit"
+            x="0"
+            y="0"
+            width="100"
+            height="100"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle
+              cx="20"
+              cy="20"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="60"
+              cy="20"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="20"
+              cy="60"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="60"
+              cy="60"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <path
+              d="M20 20 L60 20 M60 20 L60 60"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-blue-500 dark:text-blue-400"
+              fill="none"
+            />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#circuit)" />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20 dark:from-blue-900/10 dark:via-transparent dark:to-purple-900/10" />
+    </div>
+  );
+};
+
+// Geometric Blob Background
+export const GeometricBlobBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1000 1000"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="blob-gradient-1" gradientTransform="rotate(45)">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+            <linearGradient
+              id="blob-gradient-2"
+              gradientTransform="rotate(135)"
+            >
+              <stop offset="0%" stopColor="#ec4899" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M723.1,178.7c60.8,79.3,103.8,173.1,102.7,262.1c-1.1,89-46.3,173.1-107.1,252.4c-60.8,79.3-137.2,153.7-227.9,164.9c-90.7,11.2-195.7-40.8-267.6-120.1C151.3,658.7,112.5,552,113.2,447.5c0.7-104.5,40.9-206.8,112.7-286.1C297.7,82.1,401.1,25.8,491.8,36.2C582.5,46.6,660.5,123.7,723.1,178.7z"
+            fill="url(#blob-gradient-1)"
+            className="opacity-30 dark:opacity-20"
+          />
+          <path
+            d="M766.3,221.3c49.4,74.8,57.4,170.5,39.3,257.1c-18.1,86.6-62.3,164.1-124.8,222.6c-62.5,58.5-143.3,98-230.1,98.4c-86.8,0.4-179.6-38.3-242.1-96.8C146.1,644.1,113.9,566,106.2,479.5C98.5,393,115.3,298.1,164.7,223.3C214.1,148.5,296.1,93.8,382.9,93.2C469.7,92.6,561.3,146.1,631,178.7C700.7,211.3,748.5,223,766.3,221.3z"
+            fill="url(#blob-gradient-2)"
+            className="opacity-30 dark:opacity-20"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Grain Texture with Duotone
+export const GrainDuotoneBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: "200px 200px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 dark:from-blue-950/30 dark:via-transparent dark:to-purple-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-yellow-50/30 via-transparent to-pink-50/30 dark:from-yellow-950/20 dark:via-transparent dark:to-pink-950/20" />
+    </div>
+  );
+};
+
+// Liquid Mesh Background
+export const LiquidMeshBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(66,153,225,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_20%_30%,rgba(66,153,225,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_70%,rgba(236,72,153,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_80%_70%,rgba(236,72,153,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(245,158,11,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_40%_60%,rgba(245,158,11,0.05),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_20%,rgba(16,185,129,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_60%_20%,rgba(16,185,129,0.05),transparent_70%)]" />
+      <div
+        className="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+    </div>
+  );
+};
+
+// Pixel Rain Background
+export const PixelRainBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern
+            id="pixel-pattern"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="1"
+              height="1"
+              className="fill-blue-500/20 dark:fill-blue-400/10"
+            />
+            <rect
+              x="8"
+              y="4"
+              width="1"
+              height="1"
+              className="fill-blue-500/30 dark:fill-blue-400/15"
+            />
+            <rect
+              x="16"
+              y="8"
+              width="1"
+              height="1"
+              className="fill-blue-500/20 dark:fill-blue-400/10"
+            />
+            <rect
+              x="4"
+              y="12"
+              width="1"
+              height="1"
+              className="fill-blue-500/30 dark:fill-blue-400/15"
+            />
+            <rect
+              x="12"
+              y="16"
+              width="1"
+              height="1"
+              className="fill-blue-500/20 dark:fill-blue-400/10"
+            />
+
+            <rect
+              x="4"
+              y="0"
+              width="1"
+              height="1"
+              className="fill-purple-500/20 dark:fill-purple-400/10"
+            />
+            <rect
+              x="12"
+              y="4"
+              width="1"
+              height="1"
+              className="fill-purple-500/30 dark:fill-purple-400/15"
+            />
+            <rect
+              x="0"
+              y="8"
+              width="1"
+              height="1"
+              className="fill-purple-500/20 dark:fill-purple-400/10"
+            />
+            <rect
+              x="8"
+              y="12"
+              width="1"
+              height="1"
+              className="fill-purple-500/30 dark:fill-purple-400/15"
+            />
+            <rect
+              x="16"
+              y="16"
+              width="1"
+              height="1"
+              className="fill-purple-500/20 dark:fill-purple-400/10"
+            />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#pixel-pattern)" />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Gradient Stripes Background
+export const GradientStripesBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(
+              -45deg,
+              #3b82f6 0px,
+              #3b82f6 1px,
+              transparent 1px,
+              transparent 10px,
+              #8b5cf6 10px,
+              #8b5cf6 11px,
+              transparent 11px,
+              transparent 20px,
+              #ec4899 20px,
+              #ec4899 21px,
+              transparent 21px,
+              transparent 30px
+            )
+          `,
+          backgroundSize: "42.4px 42.4px", // 30px * sqrt(2)
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Frosted Glass Background
+export const FrostedGlassBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.1),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.1),transparent_70%)]" />
+      <div
+        className="absolute inset-0 opacity-[0.3] backdrop-blur-[100px] dark:opacity-[0.15]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute inset-0 backdrop-blur-[100px]" />
+    </div>
+  );
+};
+
+// Neon Grid Background
+export const NeonGridBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(139, 92, 246, 0.1) 2px, transparent 2px),
+            linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 2px, transparent 2px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+    </div>
+  );
+};
+
+// Gradient Noise Background
+export const GradientNoiseBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.2] dark:opacity-[0.1]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30" />
+    </div>
+  );
+};
+
+// Subtle Checkerboard Background
+export const SubtleCheckerboardBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0 opacity-[0.05] dark:opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(45deg, #000 25%, transparent 25%),
+            linear-gradient(-45deg, #000 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #000 75%),
+            linear-gradient(-45deg, transparent 75%, #000 75%)
+          `,
+          backgroundSize: "20px 20px",
+          backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+    </div>
+  );
+};
+
+// Organic Shapes Background
+export const OrganicShapesBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient
+              id="organic-gradient-1"
+              gradientTransform="rotate(45)"
+            >
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+            <linearGradient
+              id="organic-gradient-2"
+              gradientTransform="rotate(135)"
+            >
+              <stop offset="0%" stopColor="#ec4899" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+            <linearGradient
+              id="organic-gradient-3"
+              gradientTransform="rotate(225)"
+            >
+              <stop offset="0%" stopColor="#10b981" />
+              <stop offset="100%" stopColor="#3b82f6" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="10%"
+            cy="20%"
+            r="15%"
+            fill="url(#organic-gradient-1)"
+            className="opacity-30 dark:opacity-20"
+          />
+          <circle
+            cx="80%"
+            cy="30%"
+            r="10%"
+            fill="url(#organic-gradient-2)"
+            className="opacity-30 dark:opacity-20"
+          />
+          <circle
+            cx="30%"
+            cy="70%"
+            r="20%"
+            fill="url(#organic-gradient-3)"
+            className="opacity-30 dark:opacity-20"
+          />
+          <circle
+            cx="70%"
+            cy="80%"
+            r="12%"
+            fill="url(#organic-gradient-1)"
+            className="opacity-30 dark:opacity-20"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Circuit Pattern Background
+export const CircuitPatternBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0">
+        <svg
+          className="absolute inset-0 h-full w-full opacity-30 dark:opacity-20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <pattern
+            id="circuit-advanced"
+            x="0"
+            y="0"
+            width="100"
+            height="100"
+            patternUnits="userSpaceOnUse"
+          >
+            {/* Nodes */}
+            <circle
+              cx="10"
+              cy="10"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="50"
+              cy="10"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="90"
+              cy="10"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="10"
+              cy="50"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="3"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="90"
+              cy="50"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="10"
+              cy="90"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="50"
+              cy="90"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="90"
+              cy="90"
+              r="2"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+
+            {/* Connections */}
+            <path
+              d="M10 10 H 30 V 50 H 10 M50 10 V 30 H 90 M50 50 H 70 V 90 M10 50 H 30 M50 50 H 70 M90 50 V 70 H 70"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-blue-500 dark:text-blue-400"
+              fill="none"
+            />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#circuit-advanced)" />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+    </div>
+  );
+};
+
+// Binary Code Background
+export const BinaryCodeBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern
+            id="binary-pattern"
+            x="0"
+            y="0"
+            width="100"
+            height="100"
+            patternUnits="userSpaceOnUse"
+          >
+            <text
+              x="0"
+              y="10"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              10110101
+            </text>
+            <text
+              x="20"
+              y="20"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              01001010
+            </text>
+            <text
+              x="0"
+              y="30"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              11010010
+            </text>
+            <text
+              x="20"
+              y="40"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              00101101
+            </text>
+            <text
+              x="0"
+              y="50"
+              className="fill-purple-500 text-xs dark:fill-purple-400"
+            >
+              10110101
+            </text>
+            <text
+              x="20"
+              y="60"
+              className="fill-purple-500 text-xs dark:fill-purple-400"
+            >
+              01001010
+            </text>
+            <text
+              x="0"
+              y="70"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              11010010
+            </text>
+            <text
+              x="20"
+              y="80"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              00101101
+            </text>
+            <text
+              x="0"
+              y="90"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              10110101
+            </text>
+            <text
+              x="20"
+              y="100"
+              className="fill-blue-500 text-xs dark:fill-blue-400"
+            >
+              01001010
+            </text>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#binary-pattern)" />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Tech Particles Background
+export const TechParticlesBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient
+              id="tech-gradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+          </defs>
+
+          {/* Particles and connections */}
+          <g>
+            <circle
+              cx="10%"
+              cy="20%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="15%"
+              cy="30%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="25%"
+              cy="15%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="30%"
+              cy="25%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="40%"
+              cy="10%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="50%"
+              cy="30%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="65%"
+              cy="15%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="70%"
+              cy="25%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="80%"
+              cy="10%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="90%"
+              cy="20%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+
+            <circle
+              cx="10%"
+              cy="50%"
+              r="1"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="25%"
+              cy="45%"
+              r="1.5"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="35%"
+              cy="55%"
+              r="1"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="45%"
+              cy="50%"
+              r="1.5"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="60%"
+              cy="45%"
+              r="1"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="75%"
+              cy="55%"
+              r="1.5"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+            <circle
+              cx="85%"
+              cy="50%"
+              r="1"
+              className="fill-purple-500 dark:fill-purple-400"
+            />
+
+            <circle
+              cx="15%"
+              cy="80%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="25%"
+              cy="75%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="35%"
+              cy="85%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="50%"
+              cy="80%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="65%"
+              cy="75%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="75%"
+              cy="85%"
+              r="1"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+            <circle
+              cx="90%"
+              cy="80%"
+              r="1.5"
+              className="fill-blue-500 dark:fill-blue-400"
+            />
+
+            {/* Connections */}
+            <path
+              d="M10% 20% L 15% 30% L 25% 15% L 30% 25% L 40% 10%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M50% 30% L 65% 15% L 70% 25% L 80% 10% L 90% 20%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M10% 50% L 25% 45% L 35% 55% L 45% 50%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M60% 45% L 75% 55% L 85% 50%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M15% 80% L 25% 75% L 35% 85% L 50% 80%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M65% 75% L 75% 85% L 90% 80%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+
+            <path
+              d="M25% 15% L 25% 45%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M65% 15% L 60% 45%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M35% 55% L 35% 85%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+            <path
+              d="M75% 55% L 75% 85%"
+              stroke="url(#tech-gradient)"
+              strokeWidth="0.3"
+              fill="none"
+            />
+          </g>
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+    </div>
+  );
+};
+
+// Blueprint Grid Background
+export const BlueprintGridBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: "20px 20px",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(59, 130, 246, 0.2) 1px, transparent 1px)
+          `,
+          backgroundSize: "100px 100px",
+        }}
+      />
+      <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern
+            id="blueprint-marks"
+            x="0"
+            y="0"
+            width="100"
+            height="100"
+            patternUnits="userSpaceOnUse"
+          >
+            <text
+              x="5"
+              y="10"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              100
+            </text>
+            <text
+              x="105"
+              y="10"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              200
+            </text>
+            <text
+              x="205"
+              y="10"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              300
+            </text>
+
+            <text
+              x="2"
+              y="105"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              100
+            </text>
+            <text
+              x="2"
+              y="205"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              200
+            </text>
+            <text
+              x="2"
+              y="305"
+              className="fill-blue-500 text-[6px] dark:fill-blue-400"
+            >
+              300
+            </text>
+
+            <circle
+              cx="100"
+              cy="100"
+              r="2"
+              className="fill-blue-500/30 dark:fill-blue-400/30"
+            />
+            <circle
+              cx="200"
+              cy="200"
+              r="2"
+              className="fill-blue-500/30 dark:fill-blue-400/30"
+            />
+            <circle
+              cx="300"
+              cy="300"
+              r="2"
+              className="fill-blue-500/30 dark:fill-blue-400/30"
+            />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#blueprint-marks)" />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+    </div>
+  );
+};
+
+// Data Flow Background
+export const DataFlowBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient
+              id="data-gradient-1"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+            <linearGradient
+              id="data-gradient-2"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#8b5cf6" />
+              <stop offset="100%" stopColor="#ec4899" />
+            </linearGradient>
+
+            <marker
+              id="arrow"
+              viewBox="0 0 10 10"
+              refX="5"
+              refY="5"
+              markerWidth="4"
+              markerHeight="4"
+              orient="auto-start-reverse"
+            >
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59, 130, 246, 0.5)" />
+            </marker>
+          </defs>
+
+          {/* Data flow paths */}
+          <path
+            d="M0,30 C50,20 100,40 150,30 C200,20 250,40 300,30 C350,20 400,40 450,30 C500,20 550,40 600,30"
+            stroke="url(#data-gradient-1)"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <path
+            d="M0,70 C50,60 100,80 150,70 C200,60 250,80 300,70 C350,60 400,80 450,70 C500,60 550,80 600,70"
+            stroke="url(#data-gradient-2)"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <path
+            d="M0,110 C50,100 100,120 150,110 C200,100 250,120 300,110 C350,100 400,120 450,110 C500,100 550,120 600,110"
+            stroke="url(#data-gradient-1)"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <path
+            d="M0,150 C50,140 100,160 150,150 C200,140 250,160 300,150 C350,140 400,160 450,150 C500,140 550,160 600,150"
+            stroke="url(#data-gradient-2)"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <path
+            d="M0,190 C50,180 100,200 150,190 C200,180 250,200 300,190 C350,180 400,200 450,190 C500,180 550,200 600,190"
+            stroke="url(#data-gradient-1)"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          {/* Data nodes */}
+          <circle
+            cx="150"
+            cy="30"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="300"
+            cy="30"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="450"
+            cy="30"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+
+          <circle
+            cx="150"
+            cy="70"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+          <circle
+            cx="300"
+            cy="70"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+          <circle
+            cx="450"
+            cy="70"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+
+          <circle
+            cx="150"
+            cy="110"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="300"
+            cy="110"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="450"
+            cy="110"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+
+          <circle
+            cx="150"
+            cy="150"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+          <circle
+            cx="300"
+            cy="150"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+          <circle
+            cx="450"
+            cy="150"
+            r="3"
+            className="fill-purple-500 dark:fill-purple-400"
+          />
+
+          <circle
+            cx="150"
+            cy="190"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="300"
+            cy="190"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+          <circle
+            cx="450"
+            cy="190"
+            r="3"
+            className="fill-blue-500 dark:fill-blue-400"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Smooth Waves Background
+export const SmoothWavesBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 600"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,100 C150,50 350,150 500,100 C650,50 850,150 1000,100 C1150,50 1350,150 1500,100 V600 H0 Z"
+            fill="rgba(59, 130, 246, 0.2)"
+            className="dark:fill-blue-500/10"
+          />
+          <path
+            d="M0,200 C150,150 350,250 500,200 C650,150 850,250 1000,200 C1150,150 1350,250 1500,200 V600 H0 Z"
+            fill="rgba(139, 92, 246, 0.2)"
+            className="dark:fill-purple-500/10"
+          />
+          <path
+            d="M0,300 C150,250 350,350 500,300 C650,250 850,350 1000,300 C1150,250 1350,350 1500,300 V600 H0 Z"
+            fill="rgba(236, 72, 153, 0.2)"
+            className="dark:fill-pink-500/10"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Layered Waves Background
+export const LayeredWavesBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.3] dark:opacity-[0.2]">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 600"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="wave-gradient-1"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.3" />
+            </linearGradient>
+            <linearGradient
+              id="wave-gradient-2"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
+            </linearGradient>
+            <linearGradient
+              id="wave-gradient-3"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#ec4899" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M0,50 C100,100 200,0 300,50 C400,100 500,0 600,50 C700,100 800,0 900,50 C1000,100 1100,0 1200,50 V600 H0 Z"
+            fill="url(#wave-gradient-1)"
+          />
+          <path
+            d="M0,150 C100,200 200,100 300,150 C400,200 500,100 600,150 C700,200 800,100 900,150 C1000,200 1100,100 1200,150 V600 H0 Z"
+            fill="url(#wave-gradient-2)"
+          />
+          <path
+            d="M0,250 C100,300 200,200 300,250 C400,300 500,200 600,250 C700,300 800,200 900,250 C1000,300 1100,200 1200,250 V600 H0 Z"
+            fill="url(#wave-gradient-3)"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Gradient Waves Background
+export const GradientWavesBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 600"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="grad-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M0,100 C300,150 600,50 900,100 C1200,150 1500,50 1800,100 V600 H0 Z"
+            fill="url(#grad-wave)"
+            className="opacity-70 dark:opacity-50"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0,0 C200,100 400,0 600,100 C800,200 1000,100 1200,200 C1400,300 1600,200 1800,300 V600 H0 Z"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-blue-500/20"
+          />
+          <path
+            d="M0,100 C200,200 400,100 600,200 C800,300 1000,200 1200,300 C1400,400 1600,300 1800,400 V600 H0 Z"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-purple-500/20"
+          />
+          <path
+            d="M0,200 C200,300 400,200 600,300 C800,400 1000,300 1200,400 C1400,500 1600,400 1800,500 V600 H0 Z"
+            fill="none"
+            stroke="rgba(236, 72, 153, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-pink-500/20"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
+// Ripple Effect Background
+export const RippleEffectBackground = () => {
+  return (
+    <div className="absolute inset-0 bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient
+              id="ripple-gradient"
+              cx="50%"
+              cy="50%"
+              r="50%"
+              fx="50%"
+              fy="50%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+
+          {/* Center ripple */}
+          <circle
+            cx="50%"
+            cy="50%"
+            r="10%"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-blue-500/20"
+          />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="20%"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-purple-500/20"
+          />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="30%"
+            fill="none"
+            stroke="rgba(236, 72, 153, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-pink-500/20"
+          />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="40%"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-blue-500/20"
+          />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="50%"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.3)"
+            strokeWidth="1"
+          />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="50%"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.3)"
+            strokeWidth="1"
+            className="dark:stroke-purple-500/20"
+          />
+
+          {/* Top-left ripple */}
+          <circle
+            cx="20%"
+            cy="20%"
+            r="5%"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-blue-500/15"
+          />
+          <circle
+            cx="20%"
+            cy="20%"
+            r="10%"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-purple-500/15"
+          />
+          <circle
+            cx="20%"
+            cy="20%"
+            r="15%"
+            fill="none"
+            stroke="rgba(236, 72, 153, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-pink-500/15"
+          />
+
+          {/* Bottom-right ripple */}
+          <circle
+            cx="80%"
+            cy="80%"
+            r="5%"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-blue-500/15"
+          />
+          <circle
+            cx="80%"
+            cy="80%"
+            r="10%"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-purple-500/15"
+          />
+          <circle
+            cx="80%"
+            cy="80%"
+            r="15%"
+            fill="none"
+            stroke="rgba(236, 72, 153, 0.2)"
+            strokeWidth="0.5"
+            className="dark:stroke-pink-500/15"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+    </div>
+  );
+};
+
+// Ocean Waves Background
+export const OceanWavesBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-white dark:bg-gray-950">
+      <div className="absolute inset-0 opacity-[0.25] dark:opacity-[0.15]">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1200 600"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="ocean-gradient-1"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.4" />
+            </linearGradient>
+            <linearGradient
+              id="ocean-gradient-2"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
+            </linearGradient>
+            <linearGradient
+              id="ocean-gradient-3"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#0891b2" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M0,400 C50,380 100,420 150,400 C200,380 250,420 300,400 C350,380 400,420 450,400 C500,380 550,420 600,400 C650,380 700,420 750,400 C800,380 850,420 900,400 C950,380 1000,420 1050,400 C1100,380 1150,420 1200,400 V600 H0 Z"
+            fill="url(#ocean-gradient-1)"
+          />
+          <path
+            d="M0,450 C50,430 100,470 150,450 C200,430 250,470 300,450 C350,430 400,470 450,450 C500,430 550,470 600,450 C650,430 700,470 750,450 C800,430 850,470 900,450 C950,430 1000,470 1050,450 C1100,430 1150,470 1200,450 V600 H0 Z"
+            fill="url(#ocean-gradient-2)"
+          />
+          <path
+            d="M0,500 C50,480 100,520 150,500 C200,480 250,520 300,500 C350,480 400,520 450,500 C500,480 550,520 600,500 C650,480 700,520 750,500 C800,480 850,520 900,500 C950,480 1000,520 1050,500 C1100,480 1150,520 1200,500 V600 H0 Z"
+            fill="url(#ocean-gradient-3)"
+          />
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+    </div>
+  );
+};
+
 export const backgrounds = [
+  {
+    id: "circuit-pattern",
+    name: "Circuit Pattern",
+    component: <CircuitPatternBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0">
+    <svg class="absolute inset-0 w-full h-full opacity-30 dark:opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="circuit-advanced" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        {/* Nodes */}
+        <circle cx="10" cy="10" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="50" cy="10" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="90" cy="10" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="10" cy="50" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="50" cy="50" r="3" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="90" cy="50" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="10" cy="90" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="50" cy="90" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="90" cy="90" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        
+        {/* Connections */}
+        <path
+          d="M10 10 H 30 V 50 H 10 M50 10 V 30 H 90 M50 50 H 70 V 90 M10 50 H 30 M50 50 H 70 M90 50 V 70 H 70"
+          stroke="currentColor"
+          strokeWidth="1"
+          class="text-blue-500 dark:text-blue-400"
+          fill="none"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#circuit-advanced)" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+</div>`,
+  },
+  {
+    id: "binary-code",
+    name: "Binary Code",
+    component: <BinaryCodeBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="binary-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <text x="0" y="10" class="text-xs fill-blue-500 dark:fill-blue-400">10110101</text>
+        <text x="20" y="20" class="text-xs fill-blue-500 dark:fill-blue-400">01001010</text>
+        <text x="0" y="30" class="text-xs fill-blue-500 dark:fill-blue-400">11010010</text>
+        <text x="20" y="40" class="text-xs fill-blue-500 dark:fill-blue-400">00101101</text>
+        <text x="0" y="50" class="text-xs fill-purple-500 dark:fill-purple-400">10110101</text>
+        <text x="20" y="60" class="text-xs fill-purple-500 dark:fill-purple-400">01001010</text>
+        <text x="0" y="70" class="text-xs fill-blue-500 dark:fill-blue-400">11010010</text>
+        <text x="20" y="80" class="text-xs fill-blue-500 dark:fill-blue-400">00101101</text>
+        <text x="0" y="90" class="text-xs fill-blue-500 dark:fill-blue-400">10110101</text>
+        <text x="20" y="100" class="text-xs fill-blue-500 dark:fill-blue-400">01001010</text>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#binary-pattern)" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "tech-particles",
+    name: "Tech Particles",
+    component: <TechParticlesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tech-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+      </defs>
+      
+      {/* Particles and connections */}
+      <g>
+        <circle cx="10%" cy="20%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="15%" cy="30%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="25%" cy="15%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="30%" cy="25%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="40%" cy="10%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="50%" cy="30%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="65%" cy="15%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="70%" cy="25%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="80%" cy="10%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="90%" cy="20%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        
+        <circle cx="10%" cy="50%" r="1" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="25%" cy="45%" r="1.5" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="35%" cy="55%" r="1" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="45%" cy="50%" r="1.5" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="60%" cy="45%" r="1" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="75%" cy="55%" r="1.5" class="fill-purple-500 dark:fill-purple-400" />
+        <circle cx="85%" cy="50%" r="1" class="fill-purple-500 dark:fill-purple-400" />
+        
+        <circle cx="15%" cy="80%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="25%" cy="75%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="35%" cy="85%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="50%" cy="80%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="65%" cy="75%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="75%" cy="85%" r="1" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="90%" cy="80%" r="1.5" class="fill-blue-500 dark:fill-blue-400" />
+        
+        {/* Connections */}
+        <path d="M10% 20% L 15% 30% L 25% 15% L 30% 25% L 40% 10%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M50% 30% L 65% 15% L 70% 25% L 80% 10% L 90% 20%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M10% 50% L 25% 45% L 35% 55% L 45% 50%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M60% 45% L 75% 55% L 85% 50%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M15% 80% L 25% 75% L 35% 85% L 50% 80%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M65% 75% L 75% 85% L 90% 80%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        
+        <path d="M25% 15% L 25% 45%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M65% 15% L 60% 45%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M35% 55% L 35% 85%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+        <path d="M75% 55% L 75% 85%" stroke="url(#tech-gradient)" strokeWidth="0.3" fill="none" />
+      </g>
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+</div>`,
+  },
+  {
+    id: "blueprint-grid",
+    name: "Blueprint Grid",
+    component: <BlueprintGridBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0"
+    style={{
+      backgroundImage: \`
+        linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+      \`,
+      backgroundSize: '20px 20px',
+    }}
+  />
+  <div 
+    class="absolute inset-0"
+    style={{
+      backgroundImage: \`
+        linear-gradient(to right, rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.2) 1px, transparent 1px)
+      \`,
+      backgroundSize: '100px 100px',
+    }}
+  />
+  <div class="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="blueprint-marks" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <text x="5" y="10" class="text-[6px] fill-blue-500 dark:fill-blue-400">100</text>
+        <text x="105" y="10" class="text-[6px] fill-blue-500 dark:fill-blue-400">200</text>
+        <text x="205" y="10" class="text-[6px] fill-blue-500 dark:fill-blue-400">300</text>
+        
+        <text x="2" y="105" class="text-[6px] fill-blue-500 dark:fill-blue-400">100</text>
+        <text x="2" y="205" class="text-[6px] fill-blue-500 dark:fill-blue-400">200</text>
+        <text x="2" y="305" class="text-[6px] fill-blue-500 dark:fill-blue-400">300</text>
+        
+        <circle cx="100" cy="100" r="2" class="fill-blue-500/30 dark:fill-blue-400/30" />
+        <circle cx="200" cy="200" r="2" class="fill-blue-500/30 dark:fill-blue-400/30" />
+        <circle cx="300" cy="300" r="2" class="fill-blue-500/30 dark:fill-blue-400/30" />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#blueprint-marks)" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+</div>`,
+  },
+  {
+    id: "data-flow",
+    name: "Data Flow",
+    component: <DataFlowBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="data-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+        <linearGradient id="data-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="100%" stopColor="#ec4899" />
+        </linearGradient>
+        
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+          markerWidth="4" markerHeight="4"
+          orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59, 130, 246, 0.5)" />
+        </marker>
+      </defs>
+      
+      {/* Data flow paths */}
+      <path 
+        d="M0,30 C50,20 100,40 150,30 C200,20 250,40 300,30 C350,20 400,40 450,30 C500,20 550,40 600,30" 
+        stroke="url(#data-gradient-1)" 
+        strokeWidth="2" 
+        fill="none"
+        markerEnd="url(#arrow)"
+      />
+      
+      <path 
+        d="M0,70 C50,60 100,80 150,70 C200,60 250,80 300,70 C350,60 400,80 450,70 C500,60 550,80 600,70" 
+        stroke="url(#data-gradient-2)" 
+        strokeWidth="2" 
+        fill="none"
+        markerEnd="url(#arrow)"
+      />
+      
+      <path 
+        d="M0,110 C50,100 100,120 150,110 C200,100 250,120 300,110 C350,100 400,120 450,110 C500,100 550,120 600,110" 
+        stroke="url(#data-gradient-1)" 
+        strokeWidth="2" 
+        fill="none"
+        markerEnd="url(#arrow)"
+      />
+      
+      <path 
+        d="M0,150 C50,140 100,160 150,150 C200,140 250,160 300,150 C350,140 400,160 450,150 C500,140 550,160 600,150" 
+        stroke="url(#data-gradient-2)" 
+        strokeWidth="2" 
+        fill="none"
+        markerEnd="url(#arrow)"
+      />
+      
+      <path 
+        d="M0,190 C50,180 100,200 150,190 C200,180 250,200 300,190 C350,180 400,200 450,190 C500,180 550,200 600,190" 
+        stroke="url(#data-gradient-1)" 
+        strokeWidth="2" 
+        fill="none"
+        markerEnd="url(#arrow)"
+      />
+      
+      {/* Data nodes */}
+      <circle cx="150" cy="30" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="300" cy="30" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="450" cy="30" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      
+      <circle cx="150" cy="70" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      <circle cx="300" cy="70" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      <circle cx="450" cy="70" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      
+      <circle cx="150" cy="110" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="300" cy="110" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="450" cy="110" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      
+      <circle cx="150" cy="150" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      <circle cx="300" cy="150" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      <circle cx="450" cy="150" r="3" class="fill-purple-500 dark:fill-purple-400" />
+      
+      <circle cx="150" cy="190" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="300" cy="190" r="3" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="450" cy="190" r="3" class="fill-blue-500 dark:fill-blue-400" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+
+  // Wavy Backgrounds
+  {
+    id: "smooth-waves",
+    name: "Smooth Waves",
+    component: <SmoothWavesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0,100 C150,50 350,150 500,100 C650,50 850,150 1000,100 C1150,50 1350,150 1500,100 V600 H0 Z"
+        fill="rgba(59, 130, 246, 0.2)"
+        class="dark:fill-blue-500/10"
+      />
+      <path
+        d="M0,200 C150,150 350,250 500,200 C650,150 850,250 1000,200 C1150,150 1350,250 1500,200 V600 H0 Z"
+        fill="rgba(139, 92, 246, 0.2)"
+        class="dark:fill-purple-500/10"
+      />
+      <path
+        d="M0,300 C150,250 350,350 500,300 C650,250 850,350 1000,300 C1150,250 1350,350 1500,300 V600 H0 Z"
+        fill="rgba(236, 72, 153, 0.2)"
+        class="dark:fill-pink-500/10"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "layered-waves",
+    name: "Layered Waves",
+    component: <LayeredWavesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.3] dark:opacity-[0.2]">
+    <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.3" />
+        </linearGradient>
+        <linearGradient id="wave-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
+        </linearGradient>
+        <linearGradient id="wave-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#ec4899" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+        </linearGradient>
+      </defs>
+      
+      <path
+        d="M0,50 C100,100 200,0 300,50 C400,100 500,0 600,50 C700,100 800,0 900,50 C1000,100 1100,0 1200,50 V600 H0 Z"
+        fill="url(#wave-gradient-1)"
+      />
+      <path
+        d="M0,150 C100,200 200,100 300,150 C400,200 500,100 600,150 C700,200 800,100 900,150 C1000,200 1100,100 1200,150 V600 H0 Z"
+        fill="url(#wave-gradient-2)"
+      />
+      <path
+        d="M0,250 C100,300 200,200 300,250 C400,300 500,200 600,250 C700,300 800,200 900,250 C1000,300 1100,200 1200,250 V600 H0 Z"
+        fill="url(#wave-gradient-3)"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "gradient-waves",
+    name: "Gradient Waves",
+    component: <GradientWavesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <div class="absolute inset-0">
+    <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.1" />
+          <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+        </linearGradient>
+      </defs>
+      
+      <path
+        d="M0,100 C300,150 600,50 900,100 C1200,150 1500,50 1800,100 V600 H0 Z"
+        fill="url(#grad-wave)"
+        class="opacity-70 dark:opacity-50"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0,0 C200,100 400,0 600,100 C800,200 1000,100 1200,200 C1400,300 1600,200 1800,300 V600 H0 Z"
+        fill="none"
+        stroke="rgba(59, 130, 246, 0.3)"
+        strokeWidth="1"
+        class="dark:stroke-blue-500/20"
+      />
+      <path
+        d="M0,100 C200,200 400,100 600,200 C800,300 1000,200 1200,300 C1400,400 1600,300 1800,400 V600 H0 Z"
+        fill="none"
+        stroke="rgba(139, 92, 246, 0.3)"
+        strokeWidth="1"
+        class="dark:stroke-purple-500/20"
+      />
+      <path
+        d="M0,200 C200,300 400,200 600,300 C800,400 1000,300 1200,400 C1400,500 1600,400 1800,500 V600 H0 Z"
+        fill="none"
+        stroke="rgba(236, 72, 153, 0.3)"
+        strokeWidth="1"
+        class="dark:stroke-pink-500/20"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "ripple-effect",
+    name: "Ripple Effect",
+    component: <RippleEffectBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.2] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="ripple-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+          <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      
+      {/* Center ripple */}
+      <circle cx="50%" cy="50%" r="10%" fill="none" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" class="dark:stroke-blue-500/20" />
+      <circle cx="50%" cy="50%" r="20%" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="1" class="dark:stroke-purple-500/20" />
+      <circle cx="50%" cy="50%" r="30%" fill="none" stroke="rgba(236, 72, 153, 0.3)" strokeWidth="1" class="dark:stroke-pink-500/20" />
+      <circle cx="50%" cy="50%" r="40%" fill="none" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" class="dark:stroke-blue-500/20" />
+      <circle cx="50%" cy="50%" r="50%" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="1"  />
+      <circle cx="50%" cy="50%" r="50%" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="1" class="dark:stroke-purple-500/20" />
+      
+      {/* Top-left ripple */}
+      <circle cx="20%" cy="20%" r="5%" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="0.5" class="dark:stroke-blue-500/15" />
+      <circle cx="20%" cy="20%" r="10%" fill="none" stroke="rgba(139, 92, 246, 0.2)" strokeWidth="0.5" class="dark:stroke-purple-500/15" />
+      <circle cx="20%" cy="20%" r="15%" fill="none" stroke="rgba(236, 72, 153, 0.2)" strokeWidth="0.5" class="dark:stroke-pink-500/15" />
+      
+      {/* Bottom-right ripple */}
+      <circle cx="80%" cy="80%" r="5%" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="0.5" class="dark:stroke-blue-500/15" />
+      <circle cx="80%" cy="80%" r="10%" fill="none" stroke="rgba(139, 92, 246, 0.2)" strokeWidth="0.5" class="dark:stroke-purple-500/15" />
+      <circle cx="80%" cy="80%" r="15%" fill="none" stroke="rgba(236, 72, 153, 0.2)" strokeWidth="0.5" class="dark:stroke-pink-500/15" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+</div>`,
+  },
+  {
+    id: "ocean-waves",
+    name: "Ocean Waves",
+    component: <OceanWavesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.25] dark:opacity-[0.15]">
+    <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ocean-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.4" />
+        </linearGradient>
+        <linearGradient id="ocean-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
+        </linearGradient>
+        <linearGradient id="ocean-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#0891b2" stopOpacity="0.4" />
+        </linearGradient>
+      </defs>
+      
+      <path
+        d="M0,400 C50,380 100,420 150,400 C200,380 250,420 300,400 C350,380 400,420 450,400 C500,380 550,420 600,400 C650,380 700,420 750,400 C800,380 850,420 900,400 C950,380 1000,420 1050,400 C1100,380 1150,420 1200,400 V600 H0 Z"
+        fill="url(#ocean-gradient-1)"
+      />
+      <path
+        d="M0,450 C50,430 100,470 150,450 C200,430 250,470 300,450 C350,430 400,470 450,450 C500,430 550,470 600,450 C650,430 700,470 750,450 C800,430 850,470 900,450 C950,430 1000,470 1050,450 C1100,430 1150,470 1200,450 V600 H0 Z"
+        fill="url(#ocean-gradient-2)"
+      />
+      <path
+        d="M0,500 C50,480 100,520 150,500 C200,480 250,520 300,500 C350,480 400,520 450,500 C500,480 550,520 600,500 C650,480 700,520 750,500 C800,480 850,520 900,500 C950,480 1000,520 1050,500 C1100,480 1150,520 1200,500 V600 H0 Z"
+        fill="url(#ocean-gradient-3)"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "geometric-blob",
+    name: "Geometric Blob",
+    component: <GeometricBlobBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 1000 1000"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="blob-gradient-1" gradientTransform="rotate(45)">
+          <stop offset="0%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+        <linearGradient id="blob-gradient-2" gradientTransform="rotate(135)">
+          <stop offset="0%" stopColor="#ec4899" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M723.1,178.7c60.8,79.3,103.8,173.1,102.7,262.1c-1.1,89-46.3,173.1-107.1,252.4c-60.8,79.3-137.2,153.7-227.9,164.9c-90.7,11.2-195.7-40.8-267.6-120.1C151.3,658.7,112.5,552,113.2,447.5c0.7-104.5,40.9-206.8,112.7-286.1C297.7,82.1,401.1,25.8,491.8,36.2C582.5,46.6,660.5,123.7,723.1,178.7z"
+        fill="url(#blob-gradient-1)"
+        class="opacity-30 dark:opacity-20"
+      />
+      <path
+        d="M766.3,221.3c49.4,74.8,57.4,170.5,39.3,257.1c-18.1,86.6-62.3,164.1-124.8,222.6c-62.5,58.5-143.3,98-230.1,98.4c-86.8,0.4-179.6-38.3-242.1-96.8C146.1,644.1,113.9,566,106.2,479.5C98.5,393,115.3,298.1,164.7,223.3C214.1,148.5,296.1,93.8,382.9,93.2C469.7,92.6,561.3,146.1,631,178.7C700.7,211.3,748.5,223,766.3,221.3z"
+        fill="url(#blob-gradient-2)"
+        class="opacity-30 dark:opacity-20"
+      />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "grain-duotone",
+    name: "Grain Duotone",
+    component: <GrainDuotoneBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+    style={{
+      backgroundImage: \`url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")\`,
+      backgroundSize: '200px 200px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 dark:from-blue-950/30 dark:via-transparent dark:to-purple-950/30" />
+  <div class="absolute inset-0 bg-gradient-to-tr from-yellow-50/30 via-transparent to-pink-50/30 dark:from-yellow-950/20 dark:via-transparent dark:to-pink-950/20" />
+</div>`,
+  },
+  {
+    id: "liquid-mesh",
+    name: "Liquid Mesh",
+    component: <LiquidMeshBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(66,153,225,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_20%_30%,rgba(66,153,225,0.08),transparent_70%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_70%,rgba(236,72,153,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_80%_70%,rgba(236,72,153,0.08),transparent_70%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(245,158,11,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_40%_60%,rgba(245,158,11,0.05),transparent_70%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_20%,rgba(16,185,129,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_60%_20%,rgba(16,185,129,0.05),transparent_70%)]" />
+  <div 
+    class="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+    style={{
+      backgroundImage: \`url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")\`,
+    }}
+  />
+</div>`,
+  },
+  {
+    id: "pixel-rain",
+    name: "Pixel Rain",
+    component: <PixelRainBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="pixel-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <rect x="0" y="0" width="1" height="1" class="fill-blue-500/20 dark:fill-blue-400/10" />
+        <rect x="8" y="4" width="1" height="1" class="fill-blue-500/30 dark:fill-blue-400/15" />
+        <rect x="16" y="8" width="1" height="1" class="fill-blue-500/20 dark:fill-blue-400/10" />
+        <rect x="4" y="12" width="1" height="1" class="fill-blue-500/30 dark:fill-blue-400/15" />
+        <rect x="12" y="16" width="1" height="1" class="fill-blue-500/20 dark:fill-blue-400/10" />
+        
+        <rect x="4" y="0" width="1" height="1" class="fill-purple-500/20 dark:fill-purple-400/10" />
+        <rect x="12" y="4" width="1" height="1" class="fill-purple-500/30 dark:fill-purple-400/15" />
+        <rect x="0" y="8" width="1" height="1" class="fill-purple-500/20 dark:fill-purple-400/10" />
+        <rect x="8" y="12" width="1" height="1" class="fill-purple-500/30 dark:fill-purple-400/15" />
+        <rect x="16" y="16" width="1" height="1" class="fill-purple-500/20 dark:fill-purple-400/10" />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#pixel-pattern)" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "gradient-stripes",
+    name: "Gradient Stripes",
+    component: <GradientStripesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+    style={{
+      backgroundImage: \`
+        repeating-linear-gradient(
+          -45deg,
+          #3b82f6 0px,
+          #3b82f6 1px,
+          transparent 1px,
+          transparent 10px,
+          #8b5cf6 10px,
+          #8b5cf6 11px,
+          transparent 11px,
+          transparent 20px,
+          #ec4899 20px,
+          #ec4899 21px,
+          transparent 21px,
+          transparent 30px
+        )
+      \`,
+      backgroundSize: '42.4px 42.4px', // 30px * sqrt(2)
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "frosted-glass",
+    name: "Frosted Glass",
+    component: <FrostedGlassBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.1),transparent_70%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.1),transparent_70%)]" />
+  <div 
+    class="absolute inset-0 opacity-[0.3] dark:opacity-[0.15] backdrop-blur-[100px]"
+    style={{
+      backgroundImage: \`url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")\`,
+    }}
+  />
+  <div class="absolute inset-0 backdrop-blur-[100px]" />
+</div>`,
+  },
+  {
+    id: "neon-grid",
+    name: "Neon Grid",
+    component: <NeonGridBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0"
+    style={{
+      backgroundImage: \`
+        linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px)
+      \`,
+      backgroundSize: '40px 40px',
+    }}
+  />
+  <div 
+    class="absolute inset-0"
+    style={{
+      backgroundImage: \`
+        linear-gradient(to right, rgba(139, 92, 246, 0.1) 2px, transparent 2px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 2px, transparent 2px)
+      \`,
+      backgroundSize: '80px 80px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+</div>`,
+  },
+  {
+    id: "gradient-noise",
+    name: "Gradient Noise",
+    component: <GradientNoiseBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.2] dark:opacity-[0.1]"
+    style={{
+      backgroundImage: \`url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")\`,
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30" />
+</div>`,
+  },
+  {
+    id: "subtle-checkerboard",
+    name: "Subtle Checkerboard",
+    component: <SubtleCheckerboardBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.05] dark:opacity-[0.03]"
+    style={{
+      backgroundImage: \`
+        linear-gradient(45deg, #000 25%, transparent 25%),
+        linear-gradient(-45deg, #000 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #000 75%),
+        linear-gradient(-45deg, transparent 75%, #000 75%)
+      \`,
+      backgroundSize: '20px 20px',
+      backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+</div>`,
+  },
+  {
+    id: "organic-shapes",
+    name: "Organic Shapes",
+    component: <OrganicShapesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="organic-gradient-1" gradientTransform="rotate(45)">
+          <stop offset="0%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+        <linearGradient id="organic-gradient-2" gradientTransform="rotate(135)">
+          <stop offset="0%" stopColor="#ec4899" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+        <linearGradient id="organic-gradient-3" gradientTransform="rotate(225)">
+          <stop offset="0%" stopColor="#10b981" />
+          <stop offset="100%" stopColor="#3b82f6" />
+        </linearGradient>
+      </defs>
+      <circle cx="10%" cy="20%" r="15%" fill="url(#organic-gradient-1)" class="opacity-30 dark:opacity-20" />
+      <circle cx="80%" cy="30%" r="10%" fill="url(#organic-gradient-2)" class="opacity-30 dark:opacity-20" />
+      <circle cx="30%" cy="70%" r="20%" fill="url(#organic-gradient-3)" class="opacity-30 dark:opacity-20" />
+      <circle cx="70%" cy="80%" r="12%" fill="url(#organic-gradient-1)" class="opacity-30 dark:opacity-20" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "subtle-dot-grid",
+    name: "Subtle Dot Grid",
+    component: <SubtleDotGridBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px  dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px] opacity-40 dark:opacity-30" />
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "soft-noise-texture",
+    name: "Soft Noise Texture",
+    component: <SoftNoiseTextureBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 [background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')]" />
+  <div class="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-indigo-50/30 dark:from-rose-950/20 dark:via-transparent dark:to-indigo-950/20" />
+</div>`,
+  },
+  {
+    id: "diagonal-lines",
+    name: "Diagonal Lines",
+    component: <DiagonalLinesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+    style={{
+      backgroundImage: \`repeating-linear-gradient(45deg, #6366f1 0, #6366f1 1px, transparent 0, transparent 50%)\`,
+      backgroundSize: '10px 10px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "subtle-topography",
+    name: "Subtle Topography",
+    component: <SubtleTopographyBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <svg
+    class="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.07]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise)" />
+  </svg>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(153,246,228,0.15),transparent_40%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.12),transparent_40%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(253,224,71,0.08),transparent_40%)] dark:bg-[radial-gradient(circle_at_70%_60%,rgba(250,204,21,0.08),transparent_40%)]" />
+</div>`,
+  },
+  {
+    id: "wavy-lines",
+    name: "Wavy Lines",
+    component: <WavyLinesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <svg
+    class="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.07]"
+    width="100%"
+    height="100%"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <pattern id="wavy-pattern" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse">
+      <path
+        d="M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        class="text-blue-500 dark:text-blue-400"
+      />
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#wavy-pattern)" />
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 dark:from-blue-950/30 dark:via-gray-950 dark:to-purple-950/30" />
+</div>`,
+  },
+  {
+    id: "crosshatch-pattern",
+    name: "Crosshatch Pattern",
+    component: <CrosshatchPatternBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.07] dark:opacity-[0.05]"
+    style={{
+      backgroundImage: \`
+        linear-gradient(135deg, #000 0px, transparent 1px),
+        linear-gradient(45deg, #000 0px, transparent 1px)
+      \`,
+      backgroundSize: '16px 16px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900" />
+</div>`,
+  },
+  {
+    id: "subtle-confetti",
+    name: "Subtle Confetti",
+    component: <SubtleConfettiBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <svg
+    class="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.07]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <pattern id="confetti-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" class="fill-blue-500 dark:fill-blue-400" />
+      <circle cx="30" cy="40" r="1" class="fill-green-500 dark:fill-green-400" />
+      <circle cx="70" cy="20" r="1" class="fill-red-500 dark:fill-red-400" />
+      <circle cx="50" cy="60" r="1" class="fill-yellow-500 dark:fill-yellow-400" />
+      <circle cx="90" cy="80" r="1" class="fill-purple-500 dark:fill-purple-400" />
+      <rect x="20" y="80" width="2" height="2" class="fill-emerald-500 dark:fill-emerald-400" />
+      <rect x="60" y="30" width="2" height="2" class="fill-pink-500 dark:fill-pink-400" />
+      <rect x="80" y="50" width="2" height="2" class="fill-indigo-500 dark:fill-indigo-400" />
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#confetti-pattern)" />
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "soft-mesh-gradient",
+    name: "Soft Mesh Gradient",
+    component: <SoftMeshGradientBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(249,168,212,0.1),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(249,168,212,0.07),transparent_50%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(129,140,248,0.1),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(129,140,248,0.07),transparent_50%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,186,116,0.05),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(253,186,116,0.03),transparent_70%)]" />
+</div>`,
+  },
+  {
+    id: "subtle-graph-paper",
+    name: "Subtle Graph Paper",
+    component: <SubtleGraphPaperBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] [background-size:40px_40px]" />
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_0.5px,transparent_0.5px),linear-gradient(to_bottom,#f0f0f0_0.5px,transparent_0.5px)] dark:bg-[linear-gradient(to_right,#303030_0.5px,transparent_0.5px),linear-gradient(to_bottom,#303030_0.5px,transparent_0.5px)] [background-size:8px_8px]" />
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20" />
+</div>`,
+  },
+  {
+    id: "subtle-isometric-grid",
+    name: "Subtle Isometric Grid",
+    component: <SubtleIsometricGridBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div 
+    class="absolute inset-0 opacity-[0.15] dark:opacity-[0.07]"
+    style={{
+      backgroundImage: \`
+        linear-gradient(30deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+        linear-gradient(150deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+        linear-gradient(30deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+        linear-gradient(150deg, #808080 12%, transparent 12.5%, transparent 87%, #808080 87.5%, #808080),
+        linear-gradient(60deg, #80808077 25%, transparent 25.5%, transparent 75%, #80808077 75%, #80808077),
+        linear-gradient(60deg, #80808077 25%, transparent 25.5%, transparent 75%, #80808077 75%, #80808077)
+      \`,
+      backgroundSize: '40px 70px',
+      backgroundPosition: '0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px',
+    }}
+  />
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "gradient-mesh",
+    name: "Gradient Mesh",
+    component: <GradientMeshBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_50%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_50%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,224,71,0.1),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(253,224,71,0.05),transparent_70%)]" />
+</div>`,
+  },
+  {
+    id: "dotted-pattern",
+    name: "Dotted Pattern",
+    component: <DottedPatternBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:20px_20px]" />
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent via-blue-100/20 to-transparent dark:from-transparent dark:via-blue-900/10 dark:to-transparent" />
+</div>`,
+  },
+  {
+    id: "morphing-waves",
+    name: "Morphing Waves",
+    component: <MorphingWavesBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950 overflow-hidden">
+  <svg
+    class="absolute inset-0 w-full h-full opacity-30 dark:opacity-20"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="none"
+      stroke="url(#gradient1)"
+      strokeWidth="0.5"
+      d="M0,50 C20,60 40,40 60,50 C80,60 100,40 100,50 L100,100 L0,100 Z"
+    />
+    <path
+      fill="none"
+      stroke="url(#gradient2)"
+      strokeWidth="0.5"
+      d="M0,60 C30,70 70,30 100,60 L100,100 L0,100 Z"
+    />
+    <path
+      fill="none"
+      stroke="url(#gradient3)"
+      strokeWidth="0.5"
+      d="M0,70 C20,80 80,20 100,70 L100,100 L0,100 Z"
+    />
+    <defs>
+      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#3b82f6" />
+        <stop offset="100%" stopColor="#8b5cf6" />
+      </linearGradient>
+      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#ec4899" />
+        <stop offset="100%" stopColor="#8b5cf6" />
+      </linearGradient>
+      <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#3b82f6" />
+        <stop offset="100%" stopColor="#ec4899" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-white dark:from-gray-950 dark:via-gray-950/0 dark:to-gray-950" />
+</div>`,
+  },
+  {
+    id: "hexagon-pattern",
+    name: "Hexagon Pattern",
+    component: <HexagonPatternBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <svg
+    class="absolute inset-0 w-full h-full opacity-20 dark:opacity-10"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 100 100"
+  >
+    <defs>
+      <pattern
+        id="hexagons"
+        width="50"
+        height="43.4"
+        patternUnits="userSpaceOnUse"
+        patternTransform="scale(0.5) rotate(0)"
+      >
+        <path
+          d="M25 0 L50 0 L62.5 21.7 L50 43.4 L25 43.4 L12.5 21.7 Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          class="text-blue-500 dark:text-blue-400"
+        />
+        <path
+          d="M0 21.7 L12.5 0 L37.5 0 L50 21.7 L37.5 43.4 L12.5 43.4 Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          class="text-blue-500 dark:text-blue-400"
+        />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hexagons)" />
+  </svg>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20 dark:from-blue-900/10 dark:via-transparent dark:to-purple-900/10" />
+</div>`,
+  },
+  {
+    id: "circuit-board",
+    name: "Circuit Board",
+    component: <CircuitBoardBackground />,
+    code: `<div class="absolute inset-0 bg-white dark:bg-gray-950">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] [background-size:20px_20px]" />
+  <div class="absolute inset-0">
+    <svg
+      class="absolute inset-0 w-full h-full opacity-30 dark:opacity-20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <pattern
+        id="circuit"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="20" cy="20" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="60" cy="20" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="20" cy="60" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <circle cx="60" cy="60" r="2" class="fill-blue-500 dark:fill-blue-400" />
+        <path
+          d="M20 20 L60 20 M60 20 L60 60"
+          stroke="currentColor"
+          strokeWidth="1"
+          class="text-blue-500 dark:text-blue-400"
+          fill="none"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#circuit)" />
+    </svg>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20 dark:from-blue-900/10 dark:via-transparent dark:to-purple-900/10" />
+</div>`,
+  },
   {
     id: "saas-dashboard-grid",
     name: "SaaS Dashboard Grid",

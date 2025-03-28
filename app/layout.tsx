@@ -2,6 +2,7 @@ import BackToTopButton from "@/components/common/back-button";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
@@ -105,6 +106,8 @@ export default function RootLayout({
           <BackToTopButton />
         </ThemeProvider>
       </body>
+      {/* Google Analytics */}
+      <GoogleAnalytics gaId="G-JM9RB9WMFQ" />
     </html>
   );
 }
